@@ -2,6 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://huggingface.co https://cdn-lfs.hf.co https://cdn.jsdelivr.net;"
+        />
         <title>Hello World!</title>
     </head>
     <body>

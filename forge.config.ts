@@ -26,6 +26,8 @@ const config: ForgeConfig = {
         new AutoUnpackNativesPlugin({}),
         new WebpackPlugin({
             mainConfig,
+            // This is to override webpack-dev-server's default content security policy
+            devContentSecurityPolicy: `default-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://huggingface.co https://cdn-lfs.hf.co https://cdn.jsdelivr.net;`,
             renderer: {
                 config: rendererConfig,
                 entryPoints: [
