@@ -17,4 +17,11 @@ export const rendererConfig: Configuration = {
     resolve: {
         extensions: [".js", ".ts", ".jsx", ".tsx", ".css"],
     },
+    ignoreWarnings: [
+        {
+            module: /@huggingface\/transformers\/dist\/transformers\.web\.js$/,
+            message:
+                /Critical dependency: Accessing import\.meta directly is unsupported/,
+        },
+    ],
 };
